@@ -51,3 +51,16 @@ else:
         print(f"\nDuplicate name found: {duplicate_name}")
     else:
         print("\nNo duplicate names.")
+
+# Task 5
+        track_summary = {}
+        for participant in participants:
+            track = participant['track']
+            if track in track_summary:
+                track_summary[track] += 1
+            else:
+                track_summary[track] = 1
+
+        print("\nParticipants per track:")
+        for track in sorted(track_summary.keys()):
+            print(f"{track}: {track_summary[track]}")
